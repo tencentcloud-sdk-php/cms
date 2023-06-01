@@ -18,20 +18,28 @@ namespace TencentCloud\Cms\V20190321\Models;
 use TencentCloud\Common\AbstractModel;
 
 /**
- * DeleteTextSample请求参数结构体
+ * 入参过滤条件
  *
- * @method array getIds() 获取唯一标识数组，目前暂时只支持单个删除
- * @method void setIds(array $Ids) 设置唯一标识数组，目前暂时只支持单个删除
+ * @method string getName() 获取查询字段
+ * @method void setName(string $Name) 设置查询字段
+ * @method array getValues() 获取查询值
+ * @method void setValues(array $Values) 设置查询值
  */
-class DeleteTextSampleRequest extends AbstractModel
+class Filters extends AbstractModel
 {
     /**
-     * @var array 唯一标识数组，目前暂时只支持单个删除
+     * @var string 查询字段
      */
-    public $Ids;
+    public $Name;
 
     /**
-     * @param array $Ids 唯一标识数组，目前暂时只支持单个删除
+     * @var array 查询值
+     */
+    public $Values;
+
+    /**
+     * @param string $Name 查询字段
+     * @param array $Values 查询值
      */
     function __construct()
     {
@@ -46,8 +54,12 @@ class DeleteTextSampleRequest extends AbstractModel
         if ($param === null) {
             return;
         }
-        if (array_key_exists("Ids",$param) and $param["Ids"] !== null) {
-            $this->Ids = $param["Ids"];
+        if (array_key_exists("Name",$param) and $param["Name"] !== null) {
+            $this->Name = $param["Name"];
+        }
+
+        if (array_key_exists("Values",$param) and $param["Values"] !== null) {
+            $this->Values = $param["Values"];
         }
     }
 }
